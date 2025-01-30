@@ -1,0 +1,38 @@
+<dialog class="dialogDeleteGuitarType">
+  <button class="buttonGuitarDeleteButtonClose">X</button>
+  <form action="/deleteGuitarType" method="POST">
+    <ul>
+      <li>
+        <label for="deleteGuitarTypeId">Id: </label>
+        <input
+          type="text"
+          name="deleteGuitarTypeId"
+          id="deleteGuitarTypeId"
+          readonly
+        />
+      </li>
+      <li>
+        <label for="deleteGuitarType">Guitar Type: </label
+        ><input
+          type="text"
+          id="deleteGuitarType"
+          name="deleteGuitarType"
+          reaquired
+          min="3"
+        />
+      </li>
+      <li>
+        <label for="deleteGuitarTypePassword">Admin Password: </label>
+        <input
+          type="password"
+          name="deleteGuitarTypePassword"
+          id="deleteGuitarTypePassword"
+          required
+        />
+      </li>
+      <li>
+        <button type="submit">Delete</button>
+      </li>
+    </ul>
+  </form>
+</dialog>
