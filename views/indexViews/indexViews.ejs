@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory App</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="/js/script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <h1>Guitar Types</h1>
+        <p>
+          <button class="buttonCreateGuitarButtonShow">CREATE</button>
+        </p>
+      </div>
+    </header>
+    <main>
+      <section>
+        <ul>
+          <% if (errors.length > 0) { %> <% errors.map(({ msg }) => { %>
+          <li><%= msg %></li>
+          <% }) %> <% } %>
+        </ul>
+      </section>
+      <section class="modals">
+        <%- include('./createGuitarTypeDialogViews/createGuitarTypeDialogViews')
+        %> <%-
+        include('./updateGuitarTypeDialogViews/updateGuitarTypeDialogViews') %>
+        <%- include('./deleteGuitarTypeDialogViews/deleteGuitarTypeDialogViews')
+        %>
+      </section>
+      <section>
+        <article>
+          <%- include('./readGuitarTypeDialogViews/readGuitarTypeDialogViews', {
+          guitarTypes }) %>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
