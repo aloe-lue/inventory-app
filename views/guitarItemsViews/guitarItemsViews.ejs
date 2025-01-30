@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory App</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="/js/guitarTypes.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <h1>Guitar Type: <%= guitarType %></h1>
+        <nav>
+          <ul>
+            <li>
+              <p class="home"><a class="home" href="/">Home</a></p>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section>
+        <ul>
+          <% if (errors.length > 0) { %> <% errors.map((error) => { %>
+          <li><%= error.msg %></li>
+          <% }) %> <% } %>
+        </ul>
+      </section>
+      <section>
+        <%- include('./createGuitarItemDialogViews/createGuitarItemDialogViews',
+        { guitarType, id }) %> <%-
+        include('./updateGuitarItemDialogViews/updateGuitarItemDialogViews', {
+        guitarType, id }) %> <%-
+        include('./deleteGuitarItemDialogViews/deleteGuitarItemDialogViews') %>
+      </section>
+      <section>
+        <article>
+          <h2>Guitar Items</h2>
+          <button class="createGuitarItemDialogOpen">CREATE</button>
+          <ul>
+            <% guitarItems.map(({ id, guitar_item, quantity, price_tag}) => { %>
+            <li>
+              <div class="guitarItem">
+                <div class="guitarItemInfo">
+                  <div class="guitarName"><%= guitar_item %></div>
+                  <div class="guitarQuantity">Quantity: <%= quantity %></div>
+                  <div class="guitarPrice">Price Tag: <%= price_tag %></div>
+                </div>
+                <div class="guitarItemAction">
+                  <button
+                    class="update"
+                    data-id="<%= id %>"
+                    data-value="<%= guitar_item %>"
+                  >
+                    Update
+                  </button>
+                  <button
+                    class="delete"
+                    data-id="<%= id %>"
+                    data-value="<%= guitar_item %>"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </li>
+            <% }) %>
+          </ul>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
