@@ -1,0 +1,18 @@
+<dialog class="dialogCreateGuitarTypeForm">
+  <button class="buttonCreateGuitarButtonClose">X</button>
+  <form action="/createGuitarType" method="POST">
+    <ul>
+      <li>
+        <label for="createGuitarType">Guitar Type: </label>
+        <input
+          min="3"
+          max="255"
+          type="text"
+          id="createGuitarType"
+          name="createGuitarType"
+        />
+      </li>
+      <li><button type="submit">Create</button></li>
+    </ul>
+  </form>
+</dialog>
