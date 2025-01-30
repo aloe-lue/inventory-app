@@ -1,0 +1,44 @@
+<dialog class="createGuitarItemDialog">
+  <button class="createGuitarItemDialogClose">X</button>
+  <form
+    action="/guitarType/<%= guitarType %>/id/<%= id %>/createGuitarItem"
+    method="POST"
+  >
+    <ul>
+      <li>
+        <label for="createGuitarItem">Guitar Item: </label
+        ><input
+          type="text"
+          id="createGuitarItem"
+          name="createGuitarItem"
+          min="3"
+          max="255"
+          required
+        />
+      </li>
+      <li>
+        <label for="guitarItemQuantity">Quantity: </label
+        ><input
+          type="number"
+          id="guitarItemQuantity"
+          name="guitarItemQuantity"
+          min="1"
+          max="9999999999"
+        />
+      </li>
+      <li>
+        <label for="guitarItemPrice">Price: </label
+        ><input
+          type="number"
+          id="guitarItemPrice"
+          name="guitarItemPrice"
+          min="1"
+          max="999999999"
+        />
+      </li>
+      <li>
+        <button type="submit">CREATE</button>
+      </li>
+    </ul>
+  </form>
+</dialog>
