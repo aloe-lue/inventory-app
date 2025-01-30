@@ -1,0 +1,39 @@
+<dialog class="dialogUpdateGuitarType">
+  <button class="buttonGuitarUpdateButtonClose">X</button>
+  <form action="/updateGuitarType" method="POST">
+    <ul>
+      <li>
+        <label for="updateGuitarTypeId">Guitar Id</label>
+        <input
+          type="text"
+          id="updateGuitarTypeId"
+          name="updateGuitarTypeId"
+          readonly
+        />
+      </li>
+      <li>
+        <label for="updateGuitarType">Guitar Type: </label
+        ><input
+          type="text"
+          id="updateGuitarType"
+          name="updateGuitarType"
+          min="3"
+          max="255"
+          required
+        />
+      </li>
+      <li>
+        <label for="updateGuitarTypePassword">Admin Password: </label>
+        <input
+          type="password"
+          name="updateGuitarTypePassword"
+          id="updateGuitarTypePassword"
+          required
+        />
+      </li>
+      <li>
+        <button type="submit">Update</button>
+      </li>
+    </ul>
+  </form>
+</dialog>
