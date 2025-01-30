@@ -1,0 +1,75 @@
+<dialog class="updateGuitarItemDialog">
+  <button class="updateGuitarItemDialogClose">X</button>
+  <form
+    action="/guitarType/<%= guitarType %>/id/<%= id %>/updateGuitarItem"
+    method="POST"
+  >
+    <ul>
+      <li>
+        <label for="updateGuitarId">Id: </label
+        ><input
+          type="number"
+          readonly
+          id="updateGuitarId"
+          name="updateGuitarId"
+          required
+        />
+      </li>
+      <li>
+        <label for="currentUpdateGuitarName">Current Guitar Name: </label
+        ><input
+          type="text"
+          id="currentUpdateGuitarName"
+          name="currentUpdateGuitarName"
+          min="3"
+          max="255"
+          required
+          readonly
+        />
+      </li>
+      <li>
+        <label for="updateGuitarName">New Guitar Name: </label
+        ><input
+          type="text"
+          id="updateGuitarName"
+          name="updateGuitarName"
+          min="3"
+          max="255"
+          required
+        />
+      </li>
+      <li>
+        <label for="updateGuitarQuantity">Quantity: </label
+        ><input
+          type="number"
+          id="updateGuitarQuantity"
+          name="updateGuitarQuantity"
+          min="1"
+          max="999999999"
+        />
+      </li>
+      <li>
+        <label for="updateGuitarPrice">Price: </label
+        ><input
+          type="number"
+          id="updateGuitarPrice"
+          name="updateGuitarPrice"
+          required
+          min="1"
+          max="999999999999999"
+        />
+      </li>
+
+      <li>
+        <label for="updateGuitarAdminPassword">Admin Password: </label
+        ><input
+          type="password"
+          id="updateGuitarAdminPassword"
+          name="updateGuitarAdminPassword"
+          required
+        />
+      </li>
+      <li><button type="submit">UPDATE</button></li>
+    </ul>
+  </form>
+</dialog>
