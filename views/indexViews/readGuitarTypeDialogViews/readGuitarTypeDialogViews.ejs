@@ -1,0 +1,11 @@
+<% guitarTypes.map(({ guitar_type, id }) => { %>
+<div class="guitarTypes">
+  <div class="guitarType">
+    <a href="/guitarType/<%= guitar_type %>/id/<%= id %>"><%= guitar_type %></a>
+  </div>
+  <div class="guitarTypeAction">
+    <button class="updateGuitarTypeShow" id="<%= id %>">UPDATE</button>
+    <button class="deleteGuitarTypeShow" id="<%= id %>">DELETE</button>
+  </div>
+</div>
+<% }) %>
