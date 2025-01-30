@@ -1,0 +1,43 @@
+<dialog class="deleteGuitarItemDialog">
+  <button class="deleteGuitarItemDialogClose">X</button>
+  <form
+    action="/guitarType/<%= guitarType %>/id/<%= id %>/deleteGuitarItem"
+    method="POST"
+  >
+    <ul>
+      <li>
+        <label for="deleteGuitarItemId">Id: </label
+        ><input
+          type="number"
+          name="deleteGuitarItemId"
+          id="deleteGuitarItemId"
+          readonly
+        />
+      </li>
+      <li>
+        <label for="currentDeleteGuitarName">Current Guitar Name: </label
+        ><input
+          type="text"
+          id="currentDeleteGuitarName"
+          name="currentDeleteGuitarName"
+          min="3"
+          max="255"
+          required
+          readonly
+        />
+      </li>
+      <li>
+        <label for="deleteGuitarItemAdminPassword">Admin Password</label>
+        <input
+          type="password"
+          id="deleteGuitarItemAdminPassword"
+          name="deleteGuitarItemAdminPassword"
+          required
+        />
+      </li>
+      <li>
+        <button type="submit">DELETE</button>
+      </li>
+    </ul>
+  </form>
+</dialog>
