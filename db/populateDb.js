@@ -1,5 +1,6 @@
 const { Client } = require("pg");
 require("dotenv").config();
+const { argv } = require("node:process");
 
 const SQL = `
   CREATE TABLE IF NOT EXISTS guitar_types (
@@ -39,11 +40,12 @@ const SQL = `
 async function main() {
   console.log("...seeding");
   const client = new Client({
-    connectionString: process.env.LOCAL_DATABASE,
+    connectionString: argv[2],
   });
   await client.connect();
   await client.query(SQL);
   await client.end();
+
   console.log("done");
 }
 
